@@ -1,0 +1,90 @@
+:root{
+  --Gris: rgb(100, 100, 100);
+  --Primary: rgb(4, 35, 172);
+  --Succes: #009341;
+  --Danger: #e61e22;
+  --Warning: #ffbe18;
+  --bgGris: #c4c2c2;
+  --Gold: #D4AF37;
+}
+.img-perfil{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.img-site{
+  max-width: 250px;
+  max-height: 100px;
+  display:block;
+  margin:auto;
+  margin-bottom: 30px;
+}
+
+.img-user{
+  max-width: 150px;
+  max-height: 150px;
+  border: solid 3px;
+  margin-bottom: 15px;
+}
+
+.img-photo{
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+a{
+  text-decoration: none;
+  color: var(--Gris);
+}
+
+a:hover{
+  text-decoration: none;
+  color: var(--Gris);
+}
+
+a:visited{
+  text-decoration: none;
+}
+
+.preview {
+  background:#fff;
+  max-width:350px;
+  max-height:350px;
+  padding: 10px;
+}
+.bg-gris{
+  background-color: var(--Gris);
+}
+
+body{
+  background-color: var(--bgGris);
+}
+
+.bg-primary{
+  background-color: var(--Primary) !important;
+}
+
+.bg-success{
+  background-color: var(--Succes) !important;
+}
+.bg-danger{
+  background-color: var(--Danger) !important;
+}
+.bg-warning{
+  background-color: var(--w) !important;
+}
+.text-gold{
+  color: var(--Gold);
+}
+
+.preview img {width:100%;display:block;}
+
+label{
+  padding-top: 20px;
+}
+
+
