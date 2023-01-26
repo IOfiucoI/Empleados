@@ -148,7 +148,7 @@ $pdf->SetFont('Arial', '', 10);
 $pdf->Cell(87, 7, utf8_decode($col['rfc']), 0, 0);
 
 $pdf->SetFont('Arial', 'B', 10);
-$pdf->Cell(12, 7, utf8_decode('CURP:'), 0,0);
+$pdf->Cell(12, 7, utf8_decode('CURP:'), 0, 0);
 $pdf->SetFont('Arial', '', 10);
 $pdf->Cell(90, 7, utf8_decode($col['curp']), 0, 1);
 

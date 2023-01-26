@@ -93,7 +93,8 @@ class data
         fine 	=	:fine,
         tdl 	=	:tdl,
         tele 	=	:tele,
-        sindi	=	:sindi";
+        sindi	=	:sindi,
+        Cancelled = :can";
 
             $stmt = $this->conn->prepare($query);
 
@@ -132,6 +133,7 @@ class data
             $stmt->bindParam(':tdl',    $this->tdl, PDO::PARAM_STR, 100);
             $stmt->bindParam(':tele',   $this->tele, PDO::PARAM_STR, 100);
             $stmt->bindParam(':sindi',  $this->sindi, PDO::PARAM_STR, 100);
+            $stmt->bindParam(':can',  $this->can, PDO::PARAM_INT);
 
             if ($stmt->execute()) {
                 move_uploaded_file($this->tmp_name, $location);
@@ -183,44 +185,44 @@ class data
         tele 	=	:tele,
         sindi	=	:sindi
 
-    WHERE data_user = :dataUser";
+    WHERE id_data  = :id_data ";
 
         $stmt = $this->conn->prepare($query);
-            // $stmt->bindParam(':img',    $url, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':apellido', $this->apellido, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':nombre', $this->nombre, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':email',  $this->email, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':face',   $this->face, PDO::PARAM_STR, 255);
-            $stmt->bindParam(':status', $this->status, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':ivac',   $this->ivac, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':fvac',   $this->fvac, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':id_e',   $this->id_e, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':ads',    $this->ads, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':area',   $this->area, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':alta',   $this->alta, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':baja',   $this->baja, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':dom',    $this->dom, PDO::PARAM_STR, 255);
-            $stmt->bindParam(':telf',   $this->telf, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':cel',    $this->cel, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':fnac',   $this->fnac, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':sex',    $this->sex, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':edoc',   $this->edoc, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':rfc',    $this->rfc, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':ndcm',   $this->ndcm, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':cod_ine', $this->cod_ine, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':ldm',    $this->ldm, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':ndl',    $this->ndl, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':alergia', $this->alergia, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':hijos',  $this->hijos, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':ldn',    $this->ldn, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':nac',    $this->nac, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':gs',     $this->gs, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':curp',   $this->curp, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':mdcsm',  $this->mdcsm, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':fine',   $this->fine, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':tdl',    $this->tdl, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':tele',   $this->tele, PDO::PARAM_STR, 100);
-            $stmt->bindParam(':sindi',  $this->sindi, PDO::PARAM_STR, 100);
+        // $stmt->bindParam(':img',    $url, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':apellido', $this->apellido, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':nombre', $this->nombre, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':email',  $this->email, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':face',   $this->face, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':status', $this->status, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':ivac',   $this->ivac, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':fvac',   $this->fvac, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':id_e',   $this->id_e, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':ads',    $this->ads, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':area',   $this->area, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':alta',   $this->alta, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':baja',   $this->baja, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':dom',    $this->dom, PDO::PARAM_STR, 255);
+        $stmt->bindParam(':telf',   $this->telf, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':cel',    $this->cel, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':fnac',   $this->fnac, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':sex',    $this->sex, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':edoc',   $this->edoc, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':rfc',    $this->rfc, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':ndcm',   $this->ndcm, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':cod_ine', $this->cod_ine, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':ldm',    $this->ldm, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':ndl',    $this->ndl, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':alergia', $this->alergia, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':hijos',  $this->hijos, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':ldn',    $this->ldn, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':nac',    $this->nac, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':gs',     $this->gs, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':curp',   $this->curp, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':mdcsm',  $this->mdcsm, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':fine',   $this->fine, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':tdl',    $this->tdl, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':tele',   $this->tele, PDO::PARAM_STR, 100);
+        $stmt->bindParam(':sindi',  $this->sindi, PDO::PARAM_STR, 100);
 
         if ($stmt->execute()) {
             return true;

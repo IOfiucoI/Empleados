@@ -11,9 +11,9 @@ class connect
     public function __construct()
     {
         $this->host     = 'localhost';
-        $this->db       = 'sucesosd_demo';
-        $this->user     = 'sucesosd_demo';
-        $this->password = '5q~{SwQQ;{q#';
+        $this->db       = 'empleados';
+        $this->user     = 'root';
+        $this->password = '';
         $this->charset  = 'utf8mb4';
     }
 

@@ -202,6 +202,7 @@ include 'header.php';
                                             <option value="Si">Si</option>
                                             <option value="No">No</option>
                                         </select>
+                                        <input type="text" name="can" class="form-control" value="0" hidden>
                                     </div>
                                 </div>
                                 <br><br>

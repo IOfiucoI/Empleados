@@ -45,6 +45,7 @@ if(!empty($_POST['apellido'])){
     $data->tdl     = $_POST['tdl'];
     $data->tele    = $_POST['tele'];
     $data->sindi   = $_POST['sindi'];
+    $data->can   = $_POST['can'];
     echo $data->dataCreate();
 
 }else{
